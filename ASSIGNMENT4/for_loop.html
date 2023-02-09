@@ -1,0 +1,29 @@
+<html>
+    <head><title>ENQUE_DEQUE</title></head>
+    <script>
+        function calculate(){
+            var result=document.getElementById('value').value;
+            for(var i=1;i<=result;i++){
+     if(i%3==0 && i%5==0){
+        console.log("fizzbuzz")
+    }
+    else if(i%3==0){
+        console.log("fizz");
+    }
+    
+    else if(i%5==0){
+        console.log("buzz");
+    }
+    
+    else{
+        console.log(i);
+    }
+}
+        }
+    </script>
+    <body>
+        <h2>Give the input as 100</h2>
+        <input type="number" id="value">
+        <input type="submit" name="submit" value="submit" onclick="calculate()">
+    </body>
+</html>

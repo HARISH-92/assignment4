@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Reverse a Word</title>
+    </head>
+    <script>
+        function inverse(){
+            var string=document.querySelector('#word').value;
+            var ptr1=0;
+            var ptr2=0;
+            var result="";
+            for(var i=0;i<string.length;i++){
+                if(string==" "){
+                    ptr2=i-1;
+                    while(ptr2>=ptr1){
+                        result=result+string[ptr2];
+                        ptr2--;
+                    }
+                    result=result+" ";
+                    ptr1=i+1;
+                }
+                if(i==string.length-1){
+                    ptr2=i;
+                    while(ptr2>=ptr1){
+                        result=result+string[ptr2];
+                        ptr2--;
+                    }
+                }
+            }
+            alert(result);
+        }
+    </script>
+    <body>
+        <form action="inverse()"></form>
+        <h2>ENTER THE STRING:</h2>
+        <input type="text" id="word" name="string" >
+        <input type="submit" value="submit" name="submit" onclick="inverse()">
+    </body>
+</html>

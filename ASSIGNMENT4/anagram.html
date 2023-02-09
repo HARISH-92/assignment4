@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>
+            ANAGRAM
+        </title>
+    </head>
+    <script>
+        function result(){
+    var str1 = document.getElementById('tx1').value;
+    var str2 = document.getElementById('tx2').value;
+   var flag=1;
+    for(var i=0;i<str1.length;i++)
+    {
+        if(!str1.includes(str2[i])){
+            alert('false')
+        }
+    }
+    alert('true')
+}
+    </script>
+    <body>
+        <h2>Give two inputs</h2>
+        <input type="text" id="tx1">
+        <input type="text" id="tx2">
+        <input type="submit" value="result" name="result" onclick="result()">
+    </body>
+</html>

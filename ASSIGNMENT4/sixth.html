@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Tough code</title>
+    </head>
+    <script>
+        function result(){
+            
+        var result = document.querySelector('#val').value;
+        let fname = "";
+        let mname = "";
+        let lname = "";
+        let count1 = 0;
+        let count2 = 0;
+        let element = "";
+        for (let i = 0; i < result.length; i++) {
+          if (result[i] === ".") {
+            count2 = count2+1;
+          }
+          if (result[i] === " ") {
+            count1=count1+ 1;
+          }
+          if (count1 === 0) {
+            fname =fname+ result[i];
+          } else
+          if (count1 === 1) {
+            if (result[i] !== " ") {
+              mname = mname+result[i];
+            }
+          } else 
+          if (count1 === 2) {
+            if (result[i] !== " ") {
+              lname =lname+result[i];
+            }
+          }
+        }
+        if (result[result.length - 1] === ".") {
+            count2 -= 1;
+          }
+
+        let fnameRegularexperssion = /^[A-Z][a-zA-Z]+$|^[A-Z]\W$/g;
+        let a = fnameRegularexperssion.test(fname);
+        let a1 = fname.match(fnameRegularexperssion);
+
+        let mnameRegularexperssion = /^[A-Z][a-zA-Z]+$|^[A-Z]\W$/g;
+        let b = mnameRegularexperssion.test(mname);
+        let b1 = mname.match(mnameRegularexperssion);
+
+        let lnameRegularexpression= /^[A-Z][a-zA-Z]+$/g;
+        let c = lnameRegularexpression.test(lname);
+        let c1 = lname.match(lnameRegularexpression);
+
+          if (a === true && b === true && c === true && count1 === 2
+              && (count2 === 0 || count2 === 2)) {
+            e = true;
+          } else
+          if (a === true && b === true && c === true && count1 === 2 
+              && (mname[mname.length - 1] === ".")) {
+            e = true;
+          } else
+          if (a === true && b === true && count1 === 1) {
+            e = true; 
+          } else
+          e = false;
+            let finalname = fname + " " + mname + " " + lname
+          return e;
+      }
+        
+    </script>
+    <body>
+        <h2>Enter the Name</h2>
+        <input type="text" id="val">
+        <input type="submit" value="submit" name="submit" onclick="result()">
+    </body>
+</html>

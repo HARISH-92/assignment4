@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>
+            enque-deque
+        </title>
+    </head>
+    <script>
+        function result(){
+            var result=[10,11,40,50];
+            result.unshift(60);
+            result.unshift(55);
+            result.unshift(30);
+            result.unshift(27);
+            result.unshift(18);
+            result.shift();
+            result.shift();
+            result.shift();
+            alert(result);
+        }
+    </script>
+    <body>
+        <h2>Inbuild inputs</h2>
+        <input type="submit" name="submit" onclick="result()">
+    </body>
+</html>
